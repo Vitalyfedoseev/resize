@@ -1,0 +1,6 @@
+{
+    "require": {
+        "gumlet/php-image-resize": "^1.9",
+        "jbzoo/image": "^3.0"
+    }
+}

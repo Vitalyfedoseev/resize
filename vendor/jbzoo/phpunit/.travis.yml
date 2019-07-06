@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.2
+      env: XDEBUG_OFF="yes"
+
+script:
+  - if [[ $XDEBUG_OFF = yes ]]; then phpenv config-rm xdebug.ini; fi;
+  - make server
+  - make
+  - make test-all
+
+after_script:
+ - make coveralls
